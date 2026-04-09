@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="256" height="256" rx="55" fill="url(#bg)"/>
+  <rect x="10" y="10" width="236" height="236" rx="47"
+        fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+  <!-- Monitor body -->
+  <rect x="40" y="56" width="176" height="120" rx="12"
+        fill="none" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- Screen inner area (subtle fill) -->
+  <rect x="52" y="68" width="152" height="96" rx="4"
+        fill="rgba(255,255,255,0.08)"/>
+
+  <!-- Monitor stand neck -->
+  <line x1="128" y1="176" x2="128" y2="201"
+        stroke="white" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Monitor stand base -->
+  <line x1="92" y1="201" x2="164" y2="201"
+        stroke="white" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Dial on screen: outer ring -->
+  <circle cx="128" cy="116" r="28"
+          fill="none" stroke="white" stroke-width="5"/>
+
+  <!-- Dial tick marks -->
+  <line x1="128" y1="91" x2="128" y2="83" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="142" y1="94" x2="146" y2="87" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="152" y1="104" x2="158" y2="100" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="155" y1="118" x2="162" y2="118" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="101" y1="118" x2="94" y2="118" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="104" y1="104" x2="98" y2="100" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <line x1="114" y1="94" x2="110" y2="87" stroke="white" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Dial indicator needle (pointing ~2 o'clock) -->
+  <line x1="128" y1="116" x2="145" y2="99"
+        stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Dial center dot -->
+  <circle cx="128" cy="116" r="4" fill="white"/>
+</svg>
