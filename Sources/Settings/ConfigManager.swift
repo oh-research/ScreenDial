@@ -43,8 +43,13 @@ final class ConfigManager: ObservableObject {
                 decoded = migrate(from: decoded)
             }
 
-            self.presets = decoded.presets
-            Self.logger.info("Loaded \(decoded.presets.count) presets")
+            self.presets = decoded.presets.isEmpty ? Self.defaultPresets : decoded.presets
+            if decoded.presets.isEmpty {
+                save()
+                Self.logger.info("Config was empty, created default presets")
+            } else {
+                Self.logger.info("Loaded \(decoded.presets.count) presets")
+            }
         } catch {
             Self.logger.error("Failed to load config: \(error.localizedDescription)")
         }
