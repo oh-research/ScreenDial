@@ -28,10 +28,10 @@ enum PresetApplicator {
         logger.info("Preset applied: \(preset.name)")
     }
 
-    /// Restores display to default state (neutral gamma, no preset active).
-    /// Brightness is left unchanged — only gamma is reset to neutral.
+    /// Restores the display to the launch baseline captured when ScreenDial started.
+    /// Brightness, gamma, and appearance are all reverted.
     static func deactivate() {
-        logger.info("Deactivating preset — restoring gamma to default")
-        GammaController.resetToDefault()
+        logger.info("Deactivating preset — restoring launch baseline")
+        LaunchBaseline.shared.restore()
     }
 }

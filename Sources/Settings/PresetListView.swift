@@ -60,7 +60,7 @@ struct PresetListView: View {
     private func addPreset() {
         let preset = DisplayPreset(
             name: "New Preset",
-            brightness: BrightnessController.getBrightness() ?? 0.5,
+            brightness: BrightnessController.getMainBrightness() ?? 0.5,
             colorTemperature: 0,
             appearanceMode: AppearanceController.currentAppearance()
         )

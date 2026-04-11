@@ -4,30 +4,29 @@ struct SettingsView: View {
     @ObservedObject var configManager: ConfigManager
 
     var body: some View {
-        TabView {
-            PresetListView(configManager: configManager)
-                .tabItem { Label("Presets", systemImage: "slider.horizontal.3") }
+        VStack(spacing: 0) {
+            LaunchAtLoginRow()
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
 
-            GeneralSettingsView()
-                .tabItem { Label("General", systemImage: "gear") }
+            Divider()
+
+            PresetListView(configManager: configManager)
         }
         .frame(width: 520, height: 520)
     }
 }
 
-// MARK: - General Settings
+// MARK: - Launch at Login Row
 
-private struct GeneralSettingsView: View {
-    @State private var launchAtLogin = LoginItemHelper.isEnabled
+private struct LaunchAtLoginRow: View {
+    @State private var isEnabled = LoginItemHelper.isEnabled
 
     var body: some View {
-        Form {
-            Toggle("Launch at Login", isOn: $launchAtLogin)
-                .onChange(of: launchAtLogin) { _, newValue in
-                    LoginItemHelper.setEnabled(newValue)
-                }
-        }
-        .formStyle(.grouped)
-        .padding()
+        Toggle("Launch at Login", isOn: $isEnabled)
+            .toggleStyle(.switch)
+            .onChange(of: isEnabled) { _, newValue in
+                LoginItemHelper.setEnabled(newValue)
+            }
     }
 }

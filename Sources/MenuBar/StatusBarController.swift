@@ -74,6 +74,17 @@ final class StatusBarController: NSObject {
 
         menu.addItem(.separator())
 
+        // Revert to launch state
+        let revertItem = NSMenuItem(
+            title: "Revert to Original",
+            action: #selector(revertToBaseline(_:)),
+            keyEquivalent: ""
+        )
+        revertItem.target = self
+        menu.addItem(revertItem)
+
+        menu.addItem(.separator())
+
         // Settings
         let settingsItem = NSMenuItem(
             title: "Settings...",
@@ -128,6 +139,11 @@ final class StatusBarController: NSObject {
             PreferencesStore.shared.activePresetID = presetID.uuidString
         }
 
+        rebuildMenu()
+    }
+
+    @objc private func revertToBaseline(_ sender: Any?) {
+        LaunchBaseline.shared.restore()
         rebuildMenu()
     }
 
@@ -217,15 +233,10 @@ final class StatusBarController: NSObject {
 // MARK: - NSMenuDelegate
 
 extension StatusBarController: NSMenuDelegate {
-    /// Refresh preset checkmarks each time the menu opens.
+    /// Fully rebuild the menu each time it opens so preset checkmarks and
+    /// the history submenu always reflect current state.
     func menuNeedsUpdate(_ menu: NSMenu) {
-        // Update preset checkmarks
-        let activeID = PreferencesStore.shared.activePresetID
-        for item in menu.items where item.tag >= Self.presetBaseTag && item.tag < Self.placeholderTag {
-            if let presetID = item.representedObject as? UUID {
-                item.state = presetID.uuidString == activeID ? .on : .off
-            }
-        }
+        rebuildMenu()
     }
 }
 

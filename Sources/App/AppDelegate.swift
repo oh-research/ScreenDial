@@ -12,6 +12,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusBarController = StatusBarController()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        LaunchBaseline.shared.record()
         debugLog("[ScreenDial] launched")
         statusBarController.setup()
 
