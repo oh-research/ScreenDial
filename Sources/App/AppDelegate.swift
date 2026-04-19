@@ -14,6 +14,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         LaunchBaseline.shared.record()
         debugLog("[ScreenDial] launched")
+        MainMenuBuilder.install()
         statusBarController.setup()
 
         if !PreferencesStore.shared.onboardingCompleted {

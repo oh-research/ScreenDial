@@ -81,10 +81,10 @@ final class ConfigManager: ObservableObject {
     // MARK: - Default Presets
 
     private static let defaultPresets: [DisplayPreset] = [
-        DisplayPreset(name: "작업 모드", brightness: 0.8, colorTemperature: 0, appearanceMode: .light),
-        DisplayPreset(name: "야간 모드", brightness: 0.3, colorTemperature: 70, appearanceMode: .dark),
-        DisplayPreset(name: "영화 감상", brightness: 0.4, colorTemperature: 30, appearanceMode: .dark),
-        DisplayPreset(name: "프레젠테이션", brightness: 1.0, colorTemperature: 0, appearanceMode: .light),
+        DisplayPreset(name: "💼 작업 모드", brightness: 0.8, colorTemperature: 0, appearanceMode: .light),
+        DisplayPreset(name: "🌙 야간 모드", brightness: 0.3, colorTemperature: 70, appearanceMode: .dark),
+        DisplayPreset(name: "🎬 영화 감상", brightness: 0.4, colorTemperature: 30, appearanceMode: .dark),
+        DisplayPreset(name: "📊 프레젠테이션", brightness: 1.0, colorTemperature: 0, appearanceMode: .light),
     ]
 
     // MARK: - Mutation
