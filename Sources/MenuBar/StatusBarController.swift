@@ -154,7 +154,7 @@ final class StatusBarController: NSObject {
             return
         }
 
-        let window = NSWindow(
+        let window = ShortcutWindow(
             contentRect: NSRect(x: 0, y: 0, width: 520, height: 520),
             styleMask: [.titled, .closable],
             backing: .buffered,
@@ -184,7 +184,7 @@ final class StatusBarController: NSObject {
             return
         }
 
-        let window = NSWindow(
+        let window = ShortcutWindow(
             contentRect: NSRect(x: 0, y: 0, width: 380, height: 420),
             styleMask: [.titled, .closable],
             backing: .buffered,
@@ -208,7 +208,7 @@ final class StatusBarController: NSObject {
             return
         }
 
-        let window = NSWindow(
+        let window = ShortcutWindow(
             contentRect: NSRect(x: 0, y: 0, width: 320, height: 340),
             styleMask: [.titled, .closable],
             backing: .buffered,
